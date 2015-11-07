@@ -5,14 +5,14 @@ defmodule ChaosSpawnExample do
   # for more information on OTP Applications
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
+    alias ChaosSpawn.Chaotic.ChaoticWorker
 
     children = [
       # Start the endpoint when the application starts
       supervisor(ChaosSpawnExample.Endpoint, []),
-      # Start the Ecto repository
-      worker(ChaosSpawnExample.Repo, []),
-      # Here you could define other workers and supervisors as children
-      # worker(ChaosSpawnExample.Worker, [arg1, arg2, arg3]),
+
+      ChaoticWorker.worker(ChaosSpawnExample.Repo, []),
+      ChaoticWorker.worker(ChaosSpawnExample.NumberGenerator, [])
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
