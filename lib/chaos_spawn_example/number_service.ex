@@ -1,8 +1,8 @@
 defmodule ChaosSpawnExample.NumberService do
-  use GenServer
+  use ChaosSpawn.Chaotic.GenServer
 
   def start_link(opts \\ []) do
-    GenServer.start_link(__MODULE__, :ok, opts)
+    start_chaotic_link(__MODULE__, :ok, opts)
   end
 
   def get_number(server) do
