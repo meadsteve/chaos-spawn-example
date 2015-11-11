@@ -1,5 +1,5 @@
 %{"certifi": {:hex, :certifi, "0.1.1"},
-  "chaos_spawn": {:hex, :chaos_spawn, "0.3.0"},
+  "chaos_spawn": {:hex, :chaos_spawn, "0.5.0"},
   "combine": {:hex, :combine, "0.5.3"},
   "cowboy": {:hex, :cowboy, "1.0.3"},
   "cowlib": {:hex, :cowlib, "1.0.1"},

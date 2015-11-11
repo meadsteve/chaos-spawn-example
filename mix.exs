@@ -31,7 +31,7 @@ defmodule ChaosSpawnExample.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-     {:chaos_spawn, "0.3.0"},
+     {:chaos_spawn, "0.5.0"},
 
      {:phoenix, "~> 1.0.3"},
      {:phoenix_ecto, "~> 1.1"},
