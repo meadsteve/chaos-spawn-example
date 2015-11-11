@@ -4,6 +4,7 @@ defmodule ChaosSpawnExample.Supervisor do
 
   alias ChaosSpawnExample.NumberService
   alias ChaosSpawnExample.NumberGenerator
+  alias ChaosSpawnExample.NumberUpdater
 
   @number_service ChaosSpawnExample.NumberService
 
@@ -14,7 +15,8 @@ defmodule ChaosSpawnExample.Supervisor do
   def init(:ok) do
     children = [
       ChaoticWorker.worker(NumberService, [[name: @number_service]]),
-      ChaoticWorker.worker(Task, [&NumberGenerator.loop/0])
+      ChaoticWorker.worker(Task, [&NumberGenerator.loop/0], id: NumberGenerator),
+      ChaoticWorker.worker(Task, [&NumberUpdater.loop/0], id: NumberUpdater)
     ]
 
     supervise(children, strategy: :one_for_one)

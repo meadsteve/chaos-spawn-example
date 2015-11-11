@@ -2,7 +2,7 @@ defmodule ChaosSpawnExample.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "rooms:*", ChaosSpawnExample.RoomChannel
+  channel "count:*", ChaosSpawnExample.CountChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket
