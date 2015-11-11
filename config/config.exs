@@ -27,3 +27,7 @@ import_config "#{Mix.env}.exs"
 config :phoenix, :generators,
   migration: true,
   binary_id: false
+
+### VERY VERY MUCH CHAOS
+config :chaos_spawn, :kill_tick, 2000
+config :chaos_spawn, :kill_probability, 0.5
