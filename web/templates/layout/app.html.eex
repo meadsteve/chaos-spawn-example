@@ -14,7 +14,10 @@
   <body>
     <div class="container" role="main">
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="alert alert-info" role="alert">
+        Current count:
+        <span id='count-display'><%= get_flash(@conn, :current_count) %></span>
+      </p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
       <%= @inner %>

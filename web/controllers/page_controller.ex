@@ -5,7 +5,7 @@ defmodule ChaosSpawnExample.PageController do
 
   def index(conn, _params) do
     conn
-      |> put_flash(:info, "Current count: #{get_count}")
+      |> put_flash(:current_count, "#{get_count}")
       |> render "index.html"
   end
 

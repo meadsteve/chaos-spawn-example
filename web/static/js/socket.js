@@ -16,7 +16,7 @@ channel.join()
   .receive("error", resp => { console.log("Unable to join", resp) })
 
 channel.on("updated_count", payload => {
-    console.log(payload.body);
+    document.getElementById('count-display').innerText = payload.body;
 })
 
 export default socket
